@@ -1,6 +1,30 @@
 import colors from 'vuetify/es5/util/colors'
 
+/*
+** GitHupPages対応のため、ULRを調整
+** See https://ja.nuxtjs.org/faq/github-pages/
+*/
+
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+      router: {
+        base: '/nuxt_vuetify/'
+      }
+    }
+    : {}
+
 export default {
+  /* ---オリジナル設定--- */
+
+  /*
+  ** GitHupPages対応のため、ULRを調整を読み込み
+  */
+  ...routerBase,
+
+
+  /* ---これより下は既存設定より--- */
+
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
