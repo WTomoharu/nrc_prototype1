@@ -32,27 +32,22 @@
       app
     >
       <v-app-bar-nav-icon
-        v-show="drawerIcon"
-        @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+        v-show="isMobile"
+        @click.stop="drawer = !drawer"
+      />
+      <template v-if="!isMobile">
+        <v-toolbar-title>
+          <span style="font-size: 0.6em">N-HighSchool-Railway-Club</span>
+          <br>
+          <span style="font-size: 1.3em; line-height:0.2">N高鉄道同好会</span>
+        </v-toolbar-title>
+      </template>
+      <template v-else>
+        <v-toolbar-title>
+          N高鉄道同好会
+        </v-toolbar-title>
+      </template>
+
       <v-spacer />
       <v-btn
         icon
@@ -83,15 +78,16 @@
 
 <script>
 import isMobile from 'ismobilejs'
-// https://app.slack.com/client/C5NAM13S6
+
+// 強制的にスマホモードにする
+const debugMode = false
 
 export default {
   data () {
     return {
       clipped: false,
       drawer: false,
-      drawerIcon: isMobile.any,
-      // drawerIcon: true,
+      isMobile: debugMode ? true : isMobile.any,
       fixed: false,
       items: [
         {
