@@ -6,6 +6,8 @@
       :clipped="clipped"
       fixed
       app
+      mdi-minus
+      temporary
     >
       <v-list>
         <v-list-item
@@ -29,7 +31,9 @@
       fixed
       app
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon
+        v-show="drawerIcon"
+        @click.stop="drawer = !drawer" />
       <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
@@ -54,7 +58,7 @@
         icon
         @click.stop="rightDrawer = !rightDrawer"
       >
-        <v-icon>mdi-menu</v-icon>
+        <v-icon>mdi-minus</v-icon>
       </v-btn>
     </v-app-bar>
     <v-main>
@@ -62,23 +66,6 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer
       :absolute="!fixed"
       app
@@ -89,11 +76,16 @@
 </template>
 
 <script>
+import isMobile from 'ismobilejs'
+// https://app.slack.com/client/C5NAM13S6
+
 export default {
   data () {
     return {
       clipped: false,
       drawer: false,
+      drawerIcon: isMobile.any,
+      // drawerIcon: true,
       fixed: false,
       items: [
         {
