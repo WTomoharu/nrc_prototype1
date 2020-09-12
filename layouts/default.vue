@@ -36,15 +36,15 @@
         @click.stop="drawer = !drawer"
       />
       <template v-if="!isMobile">
-        <v-toolbar-title style="width: 300px">
-          <span style="font-size: 0.6em">N-HighSchool-Railway-Club</span>
+        <v-toolbar-title style="width: 350px; line-height: 1.3em">
+          <span style="font-size: 0.6em; vertical-align: top;">N-HighSchool-Railway-Club</span>
           <br>
-          <span style="font-size: 1.3em; line-height:0.2">N高鉄道同好会</span>
+          <span style="font-size: 1.4em;">N高鉄道同好会</span>
         </v-toolbar-title>
       </template>
       <template v-else>
         <v-toolbar-title>
-          N高鉄道同好会
+          <span style="font-size: 1.4em;">N高鉄道同好会</span>
         </v-toolbar-title>
       </template>
 
@@ -126,6 +126,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Abaout',
           to: '/about'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Links',
+          to: '/links'
         }
       ],
       miniVariant: false,
