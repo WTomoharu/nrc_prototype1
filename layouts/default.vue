@@ -56,9 +56,15 @@
       <v-spacer />
       <v-btn
         icon
-        @click.stop="rightDrawer = !rightDrawer"
+        href="https://twitter.com/home"
       >
-        <v-icon>mdi-minus</v-icon>
+        <v-icon>mdi-twitter</v-icon>
+      </v-btn>
+      <v-btn
+        icon
+        href="https://n-highschool.slack.com/archives/C5NAM13S6"
+      >
+        <v-icon>mdi-slack</v-icon>
       </v-btn>
     </v-app-bar>
     <v-main>
