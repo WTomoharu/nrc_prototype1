@@ -36,7 +36,7 @@
         @click.stop="drawer = !drawer"
       />
       <template v-if="!isMobile">
-        <v-toolbar-title>
+        <v-toolbar-title style="width: 300px">
           <span style="font-size: 0.6em">N-HighSchool-Railway-Club</span>
           <br>
           <span style="font-size: 1.3em; line-height:0.2">N高鉄道同好会</span>
@@ -47,6 +47,15 @@
           N高鉄道同好会
         </v-toolbar-title>
       </template>
+
+      <v-tabs v-if="!isMobile">
+        <v-tab
+          v-for="(item, i) in items"
+          :key="i"
+        >
+          {{ item.title }}
+        </v-tab>
+      </v-tabs>
 
       <v-spacer />
       <v-btn
@@ -63,6 +72,7 @@
       </v-btn>
     </v-app-bar>
     <v-main>
+      <!-- <v-container style="height: 1000px;"></v-container> -->
       <v-container>
         <nuxt />
       </v-container>
@@ -89,16 +99,33 @@ export default {
       drawer: false,
       isMobile: debugMode ? true : isMobile.any,
       fixed: false,
+      // items: [
+      //   {
+      //     icon: 'mdi-apps',
+      //     title: 'Welcome',
+      //     to: '/'
+      //   },
+      //   {
+      //     icon: 'mdi-chart-bubble',
+      //     title: 'Inspire',
+      //     to: '/inspire'
+      //   }
+      // ],
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Home',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Welcom',
+          to: '/welcom'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Abaout',
+          to: '/about'
         }
       ],
       miniVariant: false,
