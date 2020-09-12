@@ -9,7 +9,7 @@ const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
       router: {
-        base: '/nuxt_vuetify/'
+        base: '/nrc_prototype1/'
       }
     }
     : {}
