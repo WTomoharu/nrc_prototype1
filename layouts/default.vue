@@ -43,7 +43,7 @@
         </v-toolbar-title>
       </template>
       <template v-else>
-        <v-toolbar-title>
+        <v-toolbar-title style="padding-left: 5px;">
           <span style="font-size: 1.4em;">N高鉄道同好会</span>
         </v-toolbar-title>
       </template>
@@ -83,7 +83,7 @@
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
-      <span v-if="!(mobileDebugMode || $device.isMobile)">: Desktop</span>
+      <span v-if="!$device.isMobile">: Desktop</span>
       <span v-else>: Mobile</span>
     </v-footer>
   </v-app>
