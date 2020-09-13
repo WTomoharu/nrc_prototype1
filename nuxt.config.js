@@ -82,7 +82,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-webfontloader'
   ],
   /*
   ** Axios module configuration
@@ -94,6 +95,17 @@ export default {
   ** See https://content.nuxtjs.org/configuration
   */
   content: {},
+  /*
+  ** webfontloader module configuration
+  */
+  webfontloader: {
+    google: {
+      families: [
+        'Noto+Serif+JP:wght@400;500;600;700',
+        'Noto+Sans+JP:wght@400;500;600;700'
+      ]
+    }
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module

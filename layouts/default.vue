@@ -52,6 +52,7 @@
         <v-tab
           v-for="(item, i) in tabItems"
           :key="i"
+          style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700;"
         >
           {{ item.titleJa }}
         </v-tab>
