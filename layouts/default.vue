@@ -32,10 +32,10 @@
       app
     >
       <v-app-bar-nav-icon
-        v-show="isMobile"
+        v-show="(mobileDebugMode || $device.isMobile)"
         @click.stop="drawer = !drawer"
       />
-      <template v-if="!isMobile">
+      <template v-if="!(mobileDebugMode || $device.isMobile)">
         <v-toolbar-title style="width: 350px; line-height: 1.3em">
           <span style="font-size: 0.6em; vertical-align: top;">N-HighSchool-Railway-Club</span>
           <br>
@@ -48,10 +48,7 @@
         </v-toolbar-title>
       </template>
 
-      <v-tabs v-if="!isMobile">
-        <v-tab>
-          {{ isMobileText }}
-        </v-tab>
+      <v-tabs v-if="!(mobileDebugMode || $device.isMobile)">
         <v-tab
           v-for="(item, i) in tabItems"
           :key="i"
@@ -86,23 +83,25 @@
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span v-if="!(mobileDebugMode || $device.isMobile)">: Desktop</span>
+      <span v-else>: Mobile</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import isMobile from 'ismobilejs'
+// import isMobile from 'ismobilejs'
+// isMobile: debugMode ? true : isMobile.any,
 
-// 強制的にスマホモードにする
-const debugMode = false
+// // 強制的にスマホモードにする
+const mobileDebugMode = false
 
 export default {
   data () {
     return {
       clipped: false,
       drawer: false,
-      isMobile: debugMode ? true : isMobile.any,
-      isMobileText: typeof isMobile.any,
+      mobileDebugMode,
       fixed: false,
       tabItems: [
         {

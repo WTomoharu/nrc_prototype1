@@ -83,7 +83,10 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
-    'nuxt-webfontloader'
+    // 
+    'nuxt-webfontloader',
+    // Doc: https://github.com/nuxt-community/device-module
+    'nuxt-device-detect',
   ],
   /*
   ** Axios module configuration
