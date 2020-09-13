@@ -32,10 +32,10 @@
       app
     >
       <v-app-bar-nav-icon
-        v-show="(mobileDebugMode || $device.isMobile)"
+        v-show="$device.isMobile"
         @click.stop="drawer = !drawer"
       />
-      <template v-if="!(mobileDebugMode || $device.isMobile)">
+      <template v-if="$device.isDesktopOrTablet">
         <v-toolbar-title style="width: 350px; line-height: 1.3em">
           <span style="font-size: 0.6em; vertical-align: top;">N-HighSchool-Railway-Club</span>
           <br>
@@ -48,7 +48,7 @@
         </v-toolbar-title>
       </template>
 
-      <v-tabs v-if="!(mobileDebugMode || $device.isMobile)">
+      <v-tabs v-if="$device.isDesktopOrTablet">
         <v-tab
           v-for="(item, i) in tabItems"
           :key="i"
@@ -93,15 +93,14 @@
 // import isMobile from 'ismobilejs'
 // isMobile: debugMode ? true : isMobile.any,
 
-// // 強制的にスマホモードにする
-const mobileDebugMode = false
+// PC&tabの時に出すもの： $device.isDesktopOrTablet
+// Mobileの時に出すもの： $device.isMobile
 
 export default {
   data () {
     return {
       clipped: false,
       drawer: false,
-      mobileDebugMode,
       fixed: false,
       tabItems: [
         {
