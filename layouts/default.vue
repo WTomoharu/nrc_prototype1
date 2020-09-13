@@ -49,6 +49,9 @@
       </template>
 
       <v-tabs v-if="!isMobile">
+        <v-tab>
+          {{ isMobileText }}
+        </v-tab>
         <v-tab
           v-for="(item, i) in tabItems"
           :key="i"
@@ -99,6 +102,7 @@ export default {
       clipped: false,
       drawer: false,
       isMobile: debugMode ? true : isMobile.any,
+      isMobileText: typeof isMobile.any,
       fixed: false,
       tabItems: [
         {
