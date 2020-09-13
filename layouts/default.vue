@@ -11,7 +11,7 @@
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in tabItems"
           :key="i"
           :to="item.to"
           router
@@ -21,7 +21,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title v-text="item.titleJa" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -50,10 +50,10 @@
 
       <v-tabs v-if="!isMobile">
         <v-tab
-          v-for="(item, i) in items"
+          v-for="(item, i) in tabItems"
           :key="i"
         >
-          {{ item.title }}
+          {{ item.titleJa }}
         </v-tab>
       </v-tabs>
 
@@ -99,37 +99,35 @@ export default {
       drawer: false,
       isMobile: debugMode ? true : isMobile.any,
       fixed: false,
-      // items: [
-      //   {
-      //     icon: 'mdi-apps',
-      //     title: 'Welcome',
-      //     to: '/'
-      //   },
-      //   {
-      //     icon: 'mdi-chart-bubble',
-      //     title: 'Inspire',
-      //     to: '/inspire'
-      //   }
-      // ],
-      items: [
+      tabItems: [
         {
           icon: 'mdi-apps',
-          title: 'Home',
+          titleJa: 'ホーム',
+          titleEn: 'Home',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Welcom',
-          to: '/welcom'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Abaout',
+          titleJa: '当会について',
+          titleEn: 'About',
           to: '/about'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Links',
+          titleJa: 'よくある質問',
+          titleEn: 'F&Q',
+          to: '/faq'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          titleJa: 'ブログ',
+          titleEn: 'Blog',
+          to: '/blog'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          titleJa: 'リンク集',
+          titleEn: 'Links',
           to: '/links'
         }
       ],
