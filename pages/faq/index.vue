@@ -20,7 +20,7 @@
 export default {
   data () {
     return {
-      title: 'Home'
+      title: 'Q & A'
     }
   }
 }

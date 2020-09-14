@@ -48,10 +48,11 @@
         </v-toolbar-title>
       </template>
 
-      <v-tabs v-if="$device.isDesktopOrTablet">
+      <v-tabs v-show="$device.isDesktopOrTablet">
         <v-tab
           v-for="(item, i) in tabItems"
           :key="i"
+          :to="item.to"
           style="font-family: 'Noto Sans JP', sans-serif; font-weight: 700;"
         >
           {{ item.titleJa }}
