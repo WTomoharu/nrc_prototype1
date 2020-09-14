@@ -48,7 +48,7 @@
         </v-toolbar-title>
       </template>
 
-      <v-tabs v-show="$device.isDesktopOrTablet">
+      <v-tabs v-show="$device.isDesktopOrTablet" class="late-show">
         <v-tab
           v-for="(item, i) in tabItems"
           :key="i"
@@ -89,6 +89,26 @@
     </v-footer>
   </v-app>
 </template>
+
+<style scoped>
+.late-show {
+  /* アニメーション */
+  animation: fadeIn 1s linear;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+</style>
 
 <script>
 // import isMobile from 'ismobilejs'
