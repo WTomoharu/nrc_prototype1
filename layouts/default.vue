@@ -32,10 +32,10 @@
       app
     >
       <v-app-bar-nav-icon
-        v-show="$device.isMobile"
+        v-show="$vuetify.breakpoint.smAndDown"
         @click.stop="drawer = !drawer"
       />
-      <template v-if="$device.isDesktopOrTablet">
+      <template v-if="$vuetify.breakpoint.mdAndUp">
         <v-toolbar-title style="width: 350px; line-height: 1.3em">
           <span style="font-size: 0.6em; vertical-align: top;">N-HighSchool-Railway-Club</span>
           <br>
@@ -48,7 +48,7 @@
         </v-toolbar-title>
       </template>
 
-      <v-tabs v-show="$device.isDesktopOrTablet" class="late-show">
+      <v-tabs v-show="$vuetify.breakpoint.mdAndUp" class="late-show">
         <v-tab
           v-for="(item, i) in tabItems"
           :key="i"
@@ -84,8 +84,10 @@
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
-      <span v-if="!$device.isMobile">: Desktop</span>
-      <span v-else>: Mobile</span>
+      <span v-if="!$device.isMobile">:Desktop</span>
+      <span v-else>:Mobile</span>
+      <span>:</span>
+      <span v-text="$vuetify.breakpoint.name"></span>
     </v-footer>
   </v-app>
 </template>
@@ -93,8 +95,8 @@
 <style scoped>
 .late-show {
   /* アニメーション */
-  animation: fadeIn 1s linear;
-  animation-fill-mode: both;
+  /* animation: fadeIn 1s linear;
+  animation-fill-mode: both; */
 }
 
 @keyframes fadeIn{
@@ -116,6 +118,9 @@
 
 // PC&tabの時に出すもの： $device.isDesktopOrTablet
 // Mobileの時に出すもの： $device.isMobile
+
+// PC&tabの時に出すもの： $vuetify.breakpoint.mdAndUp
+// Mobileの時に出すもの： $vuetify.breakpoint.smAndDown
 
 export default {
   data () {
@@ -159,6 +164,12 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js'
+    }
+  },
+  methods: {
+    bkPint () {
+      const bkPt = this.$vuetify.breakpoint
+      return bkPt.name
     }
   }
 }

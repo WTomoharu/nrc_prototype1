@@ -26,7 +26,7 @@
             <v-list-item-title>{{ item.answer }}</v-list-item-title>
           </v-list-item>
         </v-list-group> -->
-        
+
         <v-list>
           <v-list-group
             v-for="item in faqItems"
