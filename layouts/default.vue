@@ -31,6 +31,7 @@
       fixed
       app
     >
+      <!--
       <v-app-bar-nav-icon
         v-show="$vuetify.breakpoint.smAndDown"
         @click.stop="drawer = !drawer"
@@ -39,6 +40,30 @@
         <v-toolbar-title style="width: 350px; line-height: 1.3em">
           <span style="font-size: 0.6em; vertical-align: top;">N-HighSchool-Railway-Club</span>
           <br>
+          <span style="font-size: 1.4em;">N高鉄道同好会</span>
+        </v-toolbar-title>
+      </template>
+      <template v-else>
+        <v-toolbar-title style="padding-left: 5px;">
+          <span style="font-size: 1.4em;">N高鉄道同好会</span>
+        </v-toolbar-title>
+      </template>
+      -->
+
+      <v-app-bar-nav-icon
+        @click.stop="drawer = !drawer"
+      />
+
+      <!-- <v-btn
+        v-if="$vuetify.breakpoint.smAndDown"
+        icon
+        @click.stop="drawer = !drawer"
+      >
+        <v-icon>mdi-menu</v-icon>
+      </v-btn> -->
+
+      <template v-if="$vuetify.breakpoint.mdAndUp">
+        <v-toolbar-title style="padding-left: 5px; width: 350px;">
           <span style="font-size: 1.4em;">N高鉄道同好会</span>
         </v-toolbar-title>
       </template>
@@ -87,7 +112,7 @@
       <span v-if="!$device.isMobile">:Desktop</span>
       <span v-else>:Mobile</span>
       <span>:</span>
-      <span v-text="$vuetify.breakpoint.name"></span>
+      <span>{{ $vuetify.breakpoint.name }}</span>
     </v-footer>
   </v-app>
 </template>
