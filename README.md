@@ -2,6 +2,9 @@
 
 ## Build Setup
 
+## GithubPages
+### URL: https://wtomoharu.github.io/nrc_prototype1/
+
 ```bash
 # install dependencies
 $ yarn install
