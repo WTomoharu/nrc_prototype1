@@ -11,14 +11,14 @@
       style="width: 100%;"
     >
       <div class="text-center">
-        <h1>Welcom to {{ title }} Page</h1>
+        <h1>よくある質問</h1>
         <v-list style="margin: 0 auto; max-width: 1000px">
           <v-list-group
             v-for="(item, i) in faqItems"
             :key="item.title"
             v-model="item.active"
             no-action
-            color="#00ffff"
+            color="#ffffff"
           >
             <template v-slot:activator>
               <v-list-item-icon

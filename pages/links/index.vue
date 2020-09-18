@@ -11,7 +11,7 @@
       style="width: 100%;"
     >
       <div class="text-center">
-        <h1>Welcom to {{ title }} Page</h1>
+        <h1>リンク集</h1>
         <v-list style="margin: 0 auto; max-width: 700px">
           <v-list-group
             v-for="(linkGroupItem) in linkGroupItems"
