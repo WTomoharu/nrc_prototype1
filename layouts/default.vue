@@ -32,36 +32,9 @@
       fixed
       app
     >
-      <!--
-      <v-app-bar-nav-icon
-        v-show="$vuetify.breakpoint.smAndDown"
-        @click.stop="drawer = !drawer"
-      />
-      <template v-if="$vuetify.breakpoint.mdAndUp">
-        <v-toolbar-title style="width: 350px; line-height: 1.3em">
-          <span style="font-size: 0.6em; vertical-align: top;">N-HighSchool-Railway-Club</span>
-          <br>
-          <span style="font-size: 1.4em;">N高鉄道同好会</span>
-        </v-toolbar-title>
-      </template>
-      <template v-else>
-        <v-toolbar-title style="padding-left: 5px;">
-          <span style="font-size: 1.4em;">N高鉄道同好会</span>
-        </v-toolbar-title>
-      </template>
-      -->
-
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
       />
-
-      <!-- <v-btn
-        v-if="$vuetify.breakpoint.smAndDown"
-        icon
-        @click.stop="drawer = !drawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn> -->
 
       <template v-if="$vuetify.breakpoint.mdAndUp">
         <v-toolbar-title style="padding-left: 5px; width: 350px;">
@@ -119,33 +92,9 @@
 </template>
 
 <style scoped>
-/*
-.late-show {
-  アニメーション
-  animation: fadeIn 1s linear;
-  animation-fill-mode: both;
-}
-
-@keyframes fadeIn{
-    0%{
-        opacity: 0;
-    }
-    90% {
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-*/
 </style>
 
 <script>
-// import isMobile from 'ismobilejs'
-// isMobile: debugMode ? true : isMobile.any,
-
-// PC&tabの時に出すもの： $device.isDesktopOrTablet
-// Mobileの時に出すもの： $device.isMobile
 
 // PC&tabの時に出すもの： $vuetify.breakpoint.mdAndUp
 // Mobileの時に出すもの： $vuetify.breakpoint.smAndDown
