@@ -73,7 +73,7 @@
         </v-toolbar-title>
       </template>
 
-      <v-tabs v-show="$vuetify.breakpoint.mdAndUp" class="late-show">
+      <v-tabs v-show="$vuetify.breakpoint.mdAndUp">
         <v-tab
           v-for="(item, i) in tabItems"
           :key="i"
@@ -118,10 +118,11 @@
 </template>
 
 <style scoped>
+/*
 .late-show {
-  /* アニメーション */
-  /* animation: fadeIn 1s linear;
-  animation-fill-mode: both; */
+  アニメーション
+  animation: fadeIn 1s linear;
+  animation-fill-mode: both;
 }
 
 @keyframes fadeIn{
@@ -135,6 +136,7 @@
         opacity: 1;
     }
 }
+*/
 </style>
 
 <script>
