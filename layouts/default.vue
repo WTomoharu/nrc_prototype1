@@ -11,9 +11,10 @@
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in tabItems"
+          v-for="(item, i) in [...tabItems, ...drawerOnlyItems]"
           :key="i"
           :to="item.to"
+          :href="item.to ? null : item.href"
           router
           exact
         >
@@ -185,6 +186,20 @@ export default {
           titleJa: 'リンク集',
           titleEn: 'Links',
           to: '/links'
+        }
+      ],
+      drawerOnlyItems: [
+        {
+          icon: 'mdi-twitter',
+          titleJa: '公式Twitter',
+          titleEn: 'Twitter',
+          href: 'https://twitter.com/home'
+        },
+        {
+          icon: 'mdi-slack',
+          titleJa: '校内Slack',
+          titleEn: 'Slack',
+          href: 'https://n-highschool.slack.com/archives/C5NAM13S6'
         }
       ],
       miniVariant: false,
