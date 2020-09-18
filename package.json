@@ -12,7 +12,9 @@
     "dev:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt",
     "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
-    "deploy:gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy:gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "set:gh-pages": "yarn generate:gh-pages && yarn deploy:gh-pages",
+    "push:all": "git push origin HEAD && yarn generate:gh-pages && yarn deploy:gh-pages"
   },
   "dependencies": {
     "@nuxt/content": "^1.5.0",
