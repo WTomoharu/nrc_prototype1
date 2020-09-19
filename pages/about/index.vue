@@ -10,7 +10,7 @@
       md6
     >
       <div class="text-center">
-        <h2>Welcom to {{ title }} Page</h2>
+        <h2>Welcome to {{ title }} Page</h2>
         <h2>This Page is not finished yet</h2>
       </div>
     </v-flex>

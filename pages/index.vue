@@ -10,7 +10,7 @@
       md6
     >
       <div class="text-center">
-        <h1>Welcom, This is Home Page</h1>
+        <h1>Welcome, This is Home Page</h1>
       </div>
     </v-flex>
   </v-layout>
