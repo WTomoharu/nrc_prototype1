@@ -24,6 +24,7 @@
     "nuxt-device-detect": "^1.1.5",
     "nuxt-webfontloader": "^1.1.0",
     "push-dir": "^0.4.1",
+    "xml2js": "^0.4.23",
     "yarn": "^1.22.5"
   },
   "devDependencies": {
